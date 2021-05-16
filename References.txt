@@ -1,0 +1,28 @@
+The Cyber Mentor(TCM)
+
+ATTINY
+https://www.amazon.in/Zbotic-ATTINY85V2-Digispark-Development-compiatble/dp/B08T1MCFWZ/ref=dp_prsubs_1?pd_rd_i=B08T1MCFWZ&psc=1
+
+Arduino IDE
+https://www.arduino.cc/en/software
+
+Board Manager
+https://raw.githubusercontent.com/digistump/arduino-boards-index/master/package_digistump_index.json
+
+Digispark drivers:
+https://github.com/digistump/DigistumpArduino/releases
+
+Rubber ducky info and code:
+https://github.com/MTK911/Attiny85
+https://maker.pro/arduino/projects/how-to-build-a-rubber-ducky-usb-with-arduino-using-a-digispark-module
+
+https://github.com/BRAINIFII/digistick
+https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Payload---hide-cmd-window
+
+https://webhook.site/
+
+
+
+Hardware knowledge
+https://www.youtube.com/watch?v=eW9WgPlcPAw
+

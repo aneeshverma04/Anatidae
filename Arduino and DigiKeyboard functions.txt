@@ -1,0 +1,35 @@
+Arduino:
+
+pinMode(pinNum,mode)
+Configures the specified pin to behave either as an input or an output. 
+e.g., pinMode(1,OUTPUT)
+
+digitalWrite(pinNum,HIGH/LOW)
+Write a HIGH or a LOW value to a digital pin. Its voltage will be set to the corresponding value: 5V (or 3.3V on 3.3V boards) for HIGH, 0V (ground) for LOW.
+e.g., digitalWrite(1,HIGH)
+
+delay(milliseconds)
+
+
+
+DigiKeyboard:
+
+DigiKeyboard.delay(milliseconds)
+// Better to use this delay while sending key strokes
+
+DigiKeyboard.update();
+// It is essential that DigiKeyboard.update() is called regularly (the beginning of the loop is good) to maintain USB communication. Using DigiKeyboard.delay() will automatically spam DigiKeyboard.update() calls during the delay period.
+
+DigiKeyboard.sendKeyStroke:
+
+	DigiKeyboard.sendKeyStroke(num)
+	e.g., DigiKeyboard.sendKeyStroke(0)
+
+	DigiKeyboard.sendKeyStroke(KEY_whatever)
+	e.g., DigiKeyboard.sendKeyStroke(KEY_ENTER) 
+
+	DigiKeyboard.sendKeyStroke(KEY_whatever, MOD_anyModifier)
+	e.g., DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT)....Win+R
+
+DigiKeyboard.println("whatever")
+// for printing

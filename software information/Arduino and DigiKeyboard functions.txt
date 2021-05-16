@@ -1,0 +1,18 @@
+Arduino:
+
+pinMode(pinNum,mode)
+Configures the specified pin to behave either as an input or an output. 
+e.g., pinMode(1,OUTPUT)
+
+digitalWrite(pinNum,HIGH/LOW)
+Write a HIGH or a LOW value to a digital pin. Its voltage will be set to the corresponding value: 5V (or 3.3V on 3.3V boards) for HIGH, 0V (ground) for LOW.
+e.g., digitalWrite(1,HIGH)
+
+delay(milliseconds)
+
+
+
+DigiKeyboard:
+
+DigiKeyboard.delay(milliseconds)
+// Better to use this delay while sending key strokes

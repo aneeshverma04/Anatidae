@@ -1,0 +1,3 @@
+CPU and microprocessor are interchangable
+Microcontroller has cpu,IO,memory like cache
+
